@@ -1,0 +1,22 @@
+\section{Tools}
+  There are a number of serverless services including  AWS' Lambda, Google's Cloud Functions and Microsoft's Azure Functions. This paper will utilise Lambda to implement a serverless architecture.
+
+  \subsection{AWS Lambda}
+  Lambda is Amazons serverless compute service. Lambda charges based on execution time in the milliseconds. The service allows users to build serverless backends with triggers ranging from many other AWS services and also £rd party API requests. It supports a number of different runtime environment including NodeJS, Python and Java \citep{awsLambda}. This paper will be executing JavaScript.
+  
+  
+  \subsection{Amazon Cognito}
+  Amazon Cognito is a an authentication service. It not only provides user sign-up and sign-in features but alos allows the client to implemented access control to other backend services through the use of client defined roles \cite{awsCognito} Cognito allows user sign-in using two different methods:
+  \begin{itemize}
+    \item Cognito allows users to register and maintains a list such who can then sign-in;
+    \item Users can sign-in to Cognito using an account with a social identity provider such as Facebook and Google.
+  \end{itemize}
+  Cognito is an ideal service to implement a serverless web app as it allows user authentication to be implemented without creating a backend server with a DB of users. For this pape
+  
+  
+  \subsection{AWS Amazon API Gateway}
+  API Gateway is AWS' service for building and publishing APIs. This allows the creation of RESTful endpoints for web app. Just like serverless functions, billing is based only on number of API calls made, making it and ideal low cost feature of this system. It can also be used in conjunction with Cognito to authorise API calls \citep{awsApiGateway}. The API gateway coupled with Lambda is what makes the serverless web app possible. API endpoints for the app can be easily created which act as the triggers for the Lambda functions. This provides the backend service for the web app.
+  
+  \subsection{AWS S3}
+  The final important element of creating a serverless web app is S3. S3 is AWS' storage service. Although S3 provides simple cloud base storage it has the added feature of being able to host static web sites when the necessary files are stored within \citep{awsWebHosting}. Thus, by uploading the static fronted pages of the web app to S3, and configuring the backend with API Gateway and Lambda, the serverless web app is complete.
+  
